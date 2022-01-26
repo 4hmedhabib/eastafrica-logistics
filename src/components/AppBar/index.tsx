@@ -14,21 +14,25 @@ import {
 
 interface Props {
   handleDrawerToggle: () => void;
+  onThemeChange: () => void;
 }
 
-const AppBarComponent: FC<Props> = ({ handleDrawerToggle }): JSX.Element => {
+const AppBarComponent: FC<Props> = ({
+  handleDrawerToggle,
+  onThemeChange,
+}): JSX.Element => {
   return (
     <div>
-      <AppBar position="static" variant="elevation" fle>
+      <AppBar position="static" variant="elevation">
         <Toolbar variant="dense">
-          <IconButton color="inherit" edge="start">
+          <IconButton color="inherit" edge="start" onClick={handleDrawerToggle}>
             <Menu />
           </IconButton>
           <Typography variant="subtitle2" component="div">
             Trading App
           </Typography>
+          <ThemeSwitcher onClick={onThemeChange} size="small" />
         </Toolbar>
-        <ThemeSwitcher />
       </AppBar>
     </div>
   );
