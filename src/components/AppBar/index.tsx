@@ -17,12 +17,14 @@ interface Props {
   handleDrawerToggle: () => void;
   onThemeChange: () => void;
   isDarkMode: boolean;
+  isDrawerOpen: boolean;
 }
 
 const AppBarComponent: FC<Props> = ({
   handleDrawerToggle,
   onThemeChange,
   isDarkMode,
+  isDrawerOpen,
 }): JSX.Element => {
   return (
     <>
@@ -33,6 +35,10 @@ const AppBarComponent: FC<Props> = ({
               color="inherit"
               edge="start"
               onClick={handleDrawerToggle}
+              sx={{
+                mr: 2,
+                ...(isDrawerOpen && { display: "none" }),
+              }}
             >
               <Menu />
             </IconButton>

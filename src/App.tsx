@@ -29,6 +29,7 @@ const App: FC = (): JSX.Element => {
         onThemeChange={onThemeChange}
         handleDrawerToggle={handleDrawerToggle}
         isDarkMode={themeMode === "dark"}
+        isDrawerOpen={sideBarToggler}
       />
       <SideBar
         handleDrawerToggle={handleDrawerToggle}
