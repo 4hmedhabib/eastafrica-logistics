@@ -1,10 +1,10 @@
-import  {FC, useState} from 'react';
-import {createTheme, ThemeProvider} from "@mui/material"
+import { FC, useState } from 'react';
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material"
 
 const App: FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">('dark');
 
-  const theme =  createTheme({
+  const theme = createTheme({
     palette: {
       mode: themeMode
     },
@@ -12,8 +12,13 @@ const App: FC = (): JSX.Element => {
       fontSize: 14
     }
   });
-  
-  return <ThemeProvider theme={theme}> <h1>Hello</h1> </ThemeProvider>
+
+  return <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <h1>
+      Hello
+    </h1>
+  </ThemeProvider>
 }
 
 export default App;
