@@ -53,7 +53,7 @@ const SideBar: FC<Props> = ({
               Repo Logo
             </Typography>
           </LogoStyled>
-          <IconButton>
+          <IconButton onClick={handleDrawerToggle}>
             {theme.direction === "ltr" ? <ChevronLeft /> : <ChevronRight />}
           </IconButton>
         </DrawerHeader>

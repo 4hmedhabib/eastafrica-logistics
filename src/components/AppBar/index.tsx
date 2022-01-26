@@ -22,6 +22,7 @@ interface Props {
 const AppBarComponent: FC<Props> = ({
   handleDrawerToggle,
   onThemeChange,
+  isDarkMode,
 }): JSX.Element => {
   return (
     <>
@@ -39,7 +40,9 @@ const AppBarComponent: FC<Props> = ({
               Trading App
             </Typography>
           </>
+          {isDarkMode ? <DarkModeIcon /> : null}
           <ThemeSwitcher onClick={onThemeChange} size="small" />
+          {!isDarkMode ? <LightModeIcon /> : null}
         </Toolbar>
       </AppBar>
     </>
