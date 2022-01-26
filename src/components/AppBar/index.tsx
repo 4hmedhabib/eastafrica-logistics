@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,10 +11,12 @@ import {
   DarkMode as DarkModeIcon,
   LightMode as LightModeIcon,
 } from "@mui/icons-material";
+import { boolean } from "yup";
 
 interface Props {
   handleDrawerToggle: () => void;
   onThemeChange: () => void;
+  isDarkMode: boolean;
 }
 
 const AppBarComponent: FC<Props> = ({
@@ -22,19 +24,25 @@ const AppBarComponent: FC<Props> = ({
   onThemeChange,
 }): JSX.Element => {
   return (
-    <div>
+    <>
       <AppBar position="static" variant="elevation">
         <Toolbar variant="dense">
-          <IconButton color="inherit" edge="start" onClick={handleDrawerToggle}>
-            <Menu />
-          </IconButton>
-          <Typography variant="subtitle2" component="div">
-            Trading App
-          </Typography>
+          <>
+            <IconButton
+              color="inherit"
+              edge="start"
+              onClick={handleDrawerToggle}
+            >
+              <Menu />
+            </IconButton>
+            <Typography variant="subtitle2" component="div">
+              Trading App
+            </Typography>
+          </>
           <ThemeSwitcher onClick={onThemeChange} size="small" />
         </Toolbar>
       </AppBar>
-    </div>
+    </>
   );
 };
 
