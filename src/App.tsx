@@ -18,12 +18,14 @@ const App: FC = (): JSX.Element => {
 
   const handleDrawerToggle = useCallback(() => {}, []);
   const onThemeChange = useCallback(() => {}, []);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar
         onThemeChange={onThemeChange}
         handleDrawerToggle={handleDrawerToggle}
+        isDarkMode={themeMode === "dark"}
       />
     </ThemeProvider>
   );
