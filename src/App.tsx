@@ -6,6 +6,7 @@ import { AppBar, SideBar } from "./components";
 
 const App: FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">("dark");
+  const [sideBarToggler, setSideBarToggler] = useState<boolean>(true);
 
   const theme = createTheme({
     palette: {
@@ -16,7 +17,9 @@ const App: FC = (): JSX.Element => {
     },
   });
 
-  const handleDrawerToggle = useCallback(() => {}, []);
+  const handleDrawerToggle = useCallback(() => {
+    setSideBarToggler(!sideBarToggler);
+  }, [sideBarToggler]);
   const onThemeChange = useCallback(() => {}, []);
 
   return (
@@ -27,7 +30,10 @@ const App: FC = (): JSX.Element => {
         handleDrawerToggle={handleDrawerToggle}
         isDarkMode={themeMode === "dark"}
       />
-      <SideBar handleDrawerToggle={handleDrawerToggle} isOpen={false} />
+      <SideBar
+        handleDrawerToggle={handleDrawerToggle}
+        isOpen={sideBarToggler}
+      />
     </ThemeProvider>
   );
 };
