@@ -7,6 +7,7 @@ const GridStyledWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   width: "100%",
+  height: "100vh",
   padding: theme.spacing(2, 1),
   justifyContent: "center",
 }));
@@ -23,7 +24,7 @@ const DataGrid = <T,>({
   size,
   gridData,
   colDef,
-  rowClickHandler,
+  rowClickHandler = undefined,
 }: DataGridProps<T>): JSX.Element => {
   const [gridApi, setGridApi] = useState<GridApi>();
   const [gridColumnApi, setGridColumnApi] = useState(null);
@@ -39,6 +40,8 @@ const DataGrid = <T,>({
     }
   }, [gridApi, showNoRowsOverlay]);
 
+  console.log(gridData);
+
   return (
     <GridStyledWrapper>
       <div
@@ -49,8 +52,9 @@ const DataGrid = <T,>({
         <AgGridReact
           rowData={gridData}
           onGridReady={onGridReady}
+          columnDefs={[{ field: "name" }]}
           rowSelection="single"
-          defaultColDef={{ resizable: true, filter: true }}
+          //   defaultColDef={{ resizable: true, filter: true }}
           onRowClicked={rowClickHandler}
         ></AgGridReact>
       </div>
