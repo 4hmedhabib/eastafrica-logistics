@@ -37,7 +37,7 @@ const DataGrid = <T,>({
     if (showNoRowsOverlay) {
       gridApi?.showNoRowsOverlay();
     }
-  }, []);
+  }, [gridApi, showNoRowsOverlay]);
 
   return (
     <GridStyledWrapper>
@@ -46,7 +46,13 @@ const DataGrid = <T,>({
           palette.mode === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"
         }`}
       >
-        <AgGridReact></AgGridReact>
+        <AgGridReact
+          rowData={gridData}
+          onGridReady={onGridReady}
+          rowSelection="single"
+          defaultColDef={{ resizable: true, filter: true }}
+          onRowClicked={rowClickHandler}
+        ></AgGridReact>
       </div>
     </GridStyledWrapper>
   );
