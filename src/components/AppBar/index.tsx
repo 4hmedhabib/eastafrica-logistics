@@ -5,13 +5,13 @@ import {
   Typography,
   IconButton,
   Switch as ThemeSwitcher,
+  Box,
 } from "@mui/material/";
 import {
   Menu,
   DarkMode as DarkModeIcon,
   LightMode as LightModeIcon,
 } from "@mui/icons-material";
-import { boolean } from "yup";
 
 interface Props {
   handleDrawerToggle: () => void;
@@ -30,25 +30,53 @@ const AppBarComponent: FC<Props> = ({
     <>
       <AppBar position="static" variant="elevation">
         <Toolbar variant="dense">
-          <>
-            <IconButton
-              color="inherit"
-              edge="start"
-              onClick={handleDrawerToggle}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100vw",
+            }}
+          >
+            <Box
               sx={{
-                mr: 2,
-                ...(isDrawerOpen && { display: "none" }),
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
               }}
             >
-              <Menu />
-            </IconButton>
-            <Typography variant="subtitle2" component="div">
-              Trading App
-            </Typography>
-          </>
-          {isDarkMode ? <DarkModeIcon /> : null}
-          <ThemeSwitcher onClick={onThemeChange} size="small" />
-          {!isDarkMode ? <LightModeIcon /> : null}
+              <IconButton
+                color="inherit"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{
+                  mr: 2,
+                  ...(isDrawerOpen && {
+                    display: "none",
+                  }),
+                }}
+              >
+                <Menu />
+              </IconButton>
+              <Typography variant="subtitle1" component="div">
+                Trading App
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
+              }}
+            >
+              {isDarkMode ? <DarkModeIcon /> : null}
+              <ThemeSwitcher onClick={onThemeChange} size="small" />
+              {!isDarkMode ? <LightModeIcon /> : null}
+            </Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </>

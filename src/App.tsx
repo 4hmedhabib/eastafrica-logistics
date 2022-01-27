@@ -7,7 +7,7 @@ import ROUTES from "./routes";
 
 const App: FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">("dark");
-  const [sideBarToggler, setSideBarToggler] = useState<boolean>(true);
+  const [sideBarToggler, setSideBarToggler] = useState<boolean>(false);
 
   const theme = createTheme({
     palette: {
