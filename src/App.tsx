@@ -21,7 +21,10 @@ const App: FC = (): JSX.Element => {
   const handleDrawerToggle = useCallback(() => {
     setSideBarToggler(!sideBarToggler);
   }, [sideBarToggler]);
-  const onThemeChange = useCallback(() => {}, []);
+
+  const onThemeChange = useCallback(() => {
+    setThemeMode(themeMode === "dark" ? "light" : "dark");
+  }, [themeMode]);
 
   return (
     <ThemeProvider theme={theme}>

@@ -12,17 +12,23 @@ interface Props {
 const Menu: FC<Props> = ({ links }): JSX.Element => {
   const navigate = useNavigate();
 
-  const navigatePath = useCallback((path) => navigate(path), []);
-  console.log(links);
+  const navigatePath = useCallback(
+    (path) => {
+      navigate(path);
+    },
+    [navigate]
+  );
 
   return (
     <div>
       <MenuList>
-        {links.map((link) => {
-          <MenuItem key={link.path} onClick={() => navigatePath(link.path)}>
-            {/* <ListItemIcon> {<link.icon fontSize="small" />} </ListItemIcon> */}
-            <ListItemText> {link.label} </ListItemText>
-          </MenuItem>;
+        {links?.map((link) => {
+          return (
+            <MenuItem key={link.path} onClick={() => navigatePath(link.path)}>
+              <ListItemIcon> {<link.icon fontSize="small" />} </ListItemIcon>
+              <ListItemText> {link.label} </ListItemText>
+            </MenuItem>
+          );
         })}
       </MenuList>
     </div>
