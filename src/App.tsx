@@ -1,9 +1,12 @@
 import { FC, useState, useCallback } from "react";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
 
 // Components
 import { AppBar, SideBar, Menu } from "./components";
-import ROUTES from "./routes";
+import ROUTES, { BLOTTER, TRADETICKET, MAIN } from "./routes";
+
+import { Blotter, Dashboard, TradeTicket } from "./features";
 
 const App: FC = (): JSX.Element => {
   const [themeMode, setThemeMode] = useState<"light" | "dark">("dark");
@@ -40,6 +43,11 @@ const App: FC = (): JSX.Element => {
         isOpen={sideBarToggler}
         children={<Menu links={ROUTES} />}
       />
+      <Routes>
+        <Route path={MAIN} element={<Dashboard />} />
+        <Route path={BLOTTER} element={<Blotter />} />
+        <Route path={TRADETICKET} element={<TradeTicket />} />
+      </Routes>
     </ThemeProvider>
   );
 };
