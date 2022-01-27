@@ -16,7 +16,7 @@ export type RouteType = {
   path: typeof MAIN | typeof BLOTTER | typeof TRADETICKET;
 };
 
-export const ROUTES: RouteType[] = [
+const Routes: RouteType[] = [
   {
     label: "Home",
     path: MAIN,
@@ -33,3 +33,5 @@ export const ROUTES: RouteType[] = [
     icon: ConfirmationNumber,
   },
 ];
+
+export default Routes;

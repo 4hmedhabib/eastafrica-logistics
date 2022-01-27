@@ -24,7 +24,7 @@ interface Props {
   handleDrawerToggle: () => void;
 }
 
-const DRAWER_WIDTH: number = 240;
+const DRAWER_WIDTH: number = 340;
 
 const SideBar: FC<Props> = ({
   isOpen,
@@ -57,6 +57,8 @@ const SideBar: FC<Props> = ({
             {theme.direction === "ltr" ? <ChevronLeft /> : <ChevronRight />}
           </IconButton>
         </DrawerHeader>
+        <Divider />
+        {children}
       </Drawer>
     </>
   );
