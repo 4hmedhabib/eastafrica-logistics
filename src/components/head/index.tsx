@@ -72,7 +72,7 @@ const TopHeader = () => {
 export default function Header({}: Props) {
   return (
     <header className="header-area">
-      <TopHeader />
+      {/* <TopHeader /> */}
 
       <div className="navbar-area">
         <div className="mobile-nav">
