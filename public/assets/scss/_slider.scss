@@ -365,12 +365,16 @@
 }
 }
 .home_slider_1{
-    background: url(../img/slider/slider-1.jpg);
+    background: url(../img/slider/slider-1.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .home_slider_2{
-    background: url(../img/slider/slider-2.jpg);
+    background: url(../img/slider/slider-2.jpeg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .h1_slider_wrapper{
     position: relative;

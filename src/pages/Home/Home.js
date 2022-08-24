@@ -19,7 +19,6 @@ const Home = () => {
     return (
         <>
             <PageHelmet pageTitle="Home Page" />
-
             <HomeOneHeader/>
             <HomeHeroSlider/>
             <HomeFeatures/>

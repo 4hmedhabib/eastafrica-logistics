@@ -21,7 +21,7 @@ const HomeHeroArea = () => {
    // slick setting
    const settings = {
       autoplay: true,
-      autoplaySpeed: 8000,
+      autoplaySpeed: 800,
       speed: 500,
       infinite: true,
       dots: false,
@@ -33,7 +33,7 @@ const HomeHeroArea = () => {
 
    return (
       <>
-         <VideoPopup videoId="yJg-Y5byMMw" />
+         {/* <VideoPopup videoId="yJg-Y5byMMw" /> */}
 
          <section className="slider__area">
                <Slider className='slider-active' {...settings}>
@@ -57,12 +57,12 @@ const HomeHeroArea = () => {
                                     </div>
                                  </div>
                               </div>
-                              <div className="col-xl-3 col-lg-3 col-md-2 col-sm-2">
+                              {/* <div className="col-xl-3 col-lg-3 col-md-2 col-sm-2">
                                  <div className="slider__play">
                                     <button onClick={() => setIsVideoOpen(true)} className="slider__play-btn">
                                        <i> <FiPlay/> </i></button>
                                  </div>
-                              </div>
+                              </div> */}
                            </div>
                         </div>
                      </div>
