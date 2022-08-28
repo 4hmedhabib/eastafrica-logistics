@@ -1,35 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollTop from "./components/ScrollTop";
-import About from "./pages/About/About";
-import BlogDetails from "./pages/BlogDetails/BlogDetails";
-import Blogs from "./pages/Blogs/Blogs";
-import Contact from "./pages/Contact/Contact";
-import HeaderStyleFive from "./pages/HeaderStyleFive/HeaderStyleFive";
-import HeaderStyleFour from "./pages/HeaderStyleFour/HeaderStyleFour";
-import HeaderStyleSeven from "./pages/HeaderStyleSeven/HeaderStyleSeven";
-import HeaderStyleSix from "./pages/HeaderStyleSix/HeaderStyleSix";
-import Home from './pages/Home/Home';
-import HomeThree from "./pages/HomeThree/HomeThree";
-import HomeTwo from "./pages/HomeTwo/HomeTwo";
-import Portfolio from "./pages/Portfolio/Portfolio";
-import PortfolioDetails from "./pages/PortfolioDetails/PortfolioDetails";
-import Services from "./pages/Services/Services";
-import ServicesDetails from "./pages/ServicesDetails/ServicesDetails";
-import Team from "./pages/Team/Team";
-import TeamDetails from "./pages/TeamDetails/TeamDetails";
-
+import React from "react";
+import {BrowserRouter, Route} from 'react-router-dom'
+import routes from './components/pages/index'
 
 function App() {
+  
   return (
-    <>
-      <BrowserRouter>
-        <ScrollTop/>
-        <Routes>
-            <Route path="/" element={<Home/>} />
-        </Routes>
+      <BrowserRouter >
+        {
+          routes.map((data,idx) => (
+            <Route exact path={data.path} component={data.component} key={idx}></Route>
+          ))
+        }
       </BrowserRouter>
-    </>
+     
   );
 }
+
 
 export default App;

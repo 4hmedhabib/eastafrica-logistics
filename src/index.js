@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom'
 import App from './App';
-import AllContext from './context/AllContext';
-import 'react-modal-video/scss/modal-video.scss';
-import 'react-image-lightbox/style.css';
-import './index.scss';
-import 'bootstrap/dist/js/bootstrap.min.js';
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.Fragment>
-    <AllContext>
-      <App />
-    </AllContext>
-  </React.Fragment>,
+  <BrowserRouter >
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
+  
 );
 
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
