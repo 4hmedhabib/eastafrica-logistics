@@ -1,51 +1,47 @@
-import React, { Component } from 'react';
-import { withRouter} from 'react-router-dom'
-import { Footer,Header,Slider,  Loader,CarouselClient,  TopBar } from '../layouts/general';
-import { Featured } from '../layouts/general/featured';
-import { Services } from '../layouts/general/services';
-import { Project } from '../layouts/general/projects';
-import { Callback } from '../layouts/general/callback';
-import { Blog } from '../layouts/general/blog';
+import React, { Component, useState } from "react";
+import {
+  Footer,
+  Header,
+  Slider,
+  Loader,
+  CarouselClient,
+  TopBar,
+} from "../layouts/general";
+import { Featured } from "../layouts/general/featured";
+import { Services } from "../layouts/general/services";
+import { Project } from "../layouts/general/projects";
+import { Callback } from "../layouts/general/callback";
+import { Blog } from "../layouts/general/blog";
 
-class Home01 extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-           headers: [
-               {
-                   id: 1,
-                   names: 'Home'
-               }
-           ],
-           
-        }
-    }
-    render() {
-        return (
-            <div className="bg-body3">
-                <div className="boxed">
-                    <Loader />
-                    <TopBar />
-                    {
-                        this.state.headers.map(data => (
-                            <Header data={data} key={data.id}/>
-                        ))
-                    }
-                    <Slider />
-                    <Featured />
+const Home = () => {
+  const [headers, setHeaders] = useState([
+    {
+      id: 1,
+      names: "Home",
+    },
+  ]);
+  return (
+    <div className="bg-body3">
+      <Loader />
+      <div className="boxed">
+        <TopBar />
+        {headers.map((data) => (
+          <Header data={data} key={data.id} />
+        ))}
+        <Slider />
+        {/* <Featured />
                     <Services />
                     <Project />
-                    <Callback />
+                    <Callback /> */}
 
-                    <Blog />
+        {/* <Blog />
 
-                    <CarouselClient />
+                    <CarouselClient /> */}
 
-                    <Footer />
-                </div>
-            </div>
-        );
-    }
-}
+        {/* <Footer /> */}
+      </div>
+    </div>
+  );
+};
 
-export default withRouter(Home01);
+export default Home;
