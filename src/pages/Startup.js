@@ -16,6 +16,7 @@ import AboutFour from "../elements/about/AboutFour";
 import ServiceThree from "../elements/service/ServiceThree";
 import ServiceTwo from "../elements/service/ServiceTwo";
 import SlipFour from "../elements/split/SlipFour";
+import TestimonialOne from "../elements/testimonial/TestimonialOne";
 var BlogListData = BlogClassicData.slice(0, 3);
 
 const BannerData = [
@@ -121,7 +122,27 @@ const Startup = () => {
           </div>
         </div>
         {/* End Elements Area  */}
-        <Separator />s
+        <Separator />
+        {/* Start Elements Area  */}
+        <div className="rwt-testimonial-area rn-section-gap">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 mb--10">
+                <SectionTitle
+                  textAlign="text-center"
+                  radiusRounded=""
+                  subtitle="Client Feedback"
+                  title="Testimonial."
+                />
+              </div>
+            </div>
+            <TestimonialOne
+              column="col-lg-4 col-md-6 col-12 mt--30"
+              teamStyle="card-style-default testimonial-style-one"
+            />
+          </div>
+        </div>
+        {/* End Elements Area  */}
         <Separator />
         <FooterTwo />
       </main>
