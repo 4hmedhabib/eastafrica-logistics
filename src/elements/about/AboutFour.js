@@ -12,7 +12,7 @@ const PopupData = [
 
 const AboutFour = ({ image }) => {
   return (
-    <div className="about-area about-style-4 mt--80">
+    <div className="about-area about-style-4 mt--80 mb--50">
       <div className="container">
         <div className="row row--40 align-items-center">
           <div className="col-lg-6">
