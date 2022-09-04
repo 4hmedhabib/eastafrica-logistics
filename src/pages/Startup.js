@@ -4,20 +4,14 @@ import SEO from "../common/SEO";
 import HeaderOne from "../common/header/HeaderOne";
 import { BannerActivation } from "../utils/script";
 import Separator from "../elements/separator/Separator";
-import CircleProgress from "../elements/progressbar/CircleProgress";
-import PortfolioOne from "../elements/portfolio/PortfolioOne";
-import ServiceFour from "../elements/service/ServiceFour";
-import TimelineTwo from "../elements/timeline/TimelineTwo";
 import SectionTitle from "../elements/sectionTitle/SectionTitle";
 import FooterTwo from "../common/footer/FooterTwo";
-import BlogList from "../components/blog/itemProp/BlogList";
-import BlogClassicData from "../data/blog/BlogList.json";
 import AboutFour from "../elements/about/AboutFour";
-import ServiceThree from "../elements/service/ServiceThree";
 import ServiceTwo from "../elements/service/ServiceTwo";
 import SlipFour from "../elements/split/SlipFour";
 import TestimonialOne from "../elements/testimonial/TestimonialOne";
-var BlogListData = BlogClassicData.slice(0, 3);
+import BreadcrumbOne from "../elements/breadcrumb/BreadcrumbOne";
+import BlogProp from "../components/blog/itemProp/BlogProp";
 
 const BannerData = [
   {
@@ -51,7 +45,7 @@ const Startup = () => {
           {BannerData.map((data, index) => (
             <div key={index} className="single-slide">
               <div
-                className="height-950 bg-overlay bg_image"
+                className="height-750 bg-overlay bg_image"
                 style={{
                   backgroundImage: `url(${process.env.PUBLIC_URL} ${data.image})`,
                 }}
@@ -144,6 +138,26 @@ const Startup = () => {
         </div>
         {/* End Elements Area  */}
         <Separator />
+        <BreadcrumbOne
+          title="The Easiest Way To Create Website <br /> Quick Copy & Make site."
+          rootUrl="/"
+          parentUrl="Home"
+          currentUrl="Blog List"
+        />
+        <div className="main-content">
+          {/* Start Blog Area  */}
+          <div className="rn-blog-area rn-section-gap">
+            <div className="container">
+              <div className="row mt_dec--30">
+                <BlogProp
+                  column="col-lg-4 col-md-6 col-12 mt--30"
+                  StyleVarProp="box-card-style-default"
+                />
+              </div>
+            </div>
+          </div>
+          {/* End Blog Area  */}
+        </div>
         <FooterTwo />
       </main>
     </>
