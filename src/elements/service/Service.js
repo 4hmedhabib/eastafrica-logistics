@@ -1,20 +1,15 @@
 import React from "react";
 import SEO from "../../common/SEO";
-import Layout from "../../common/Layout";
 import BreadcrumbOne from "../breadcrumb/BreadcrumbOne";
 import SectionTitle from "../sectionTitle/SectionTitle";
-import ServiceOne from "./ServiceOne";
 import ServiceTwo from "./ServiceTwo";
-import ServiceThree from "./ServiceThree";
-import ServiceFour from "./ServiceFour";
-import ServiceFive from "./ServiceFive";
 import Separator from "../separator/Separator";
 
 const Service = () => {
   return (
     <>
       <SEO title="Service || Doob - React Business  Template" />
-      <Layout>
+
         <BreadcrumbOne
           title="We Are Trusted For Our Services."
           rootUrl="/"
@@ -43,7 +38,6 @@ const Service = () => {
 
           <Separator />
         </div>
-      </Layout>
     </>
   );
 };

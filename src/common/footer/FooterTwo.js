@@ -5,7 +5,6 @@ import footerOne from "../../data/footer/footerOne.json";
 import ScrollTop from "./ScrollTop";
 import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from "react-icons/fi";
 
-const footerIntem =  footerOne[0];
 const footerIntemOne =  footerOne[1];
 const footerIntemTwo =  footerOne[2];
 const footerIntemThree =  footerOne[3];

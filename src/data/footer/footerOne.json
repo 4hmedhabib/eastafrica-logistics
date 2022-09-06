@@ -6,7 +6,7 @@
 
     {
         "id": 2,
-        "title": "Services",
+        "title": "Pages",
         "quicklink": [
             {
                 "id": 1,
@@ -33,54 +33,54 @@
 
     {
         "id": 3,
-        "title": "Solutions",
+        "title": "Company",
         "quicklink": [
             {
                 "id": 1,
-                "text": "Gallery",
-                "url": "/gallery"
+                "text": "Air Freight Service",
+                "url": "/service"
             },
             {
                 "id": 2,
-                "text": "About Us",
-                "url": "/about-us"
+                "text": "Freight Forwarding",
+                "url": "/service"
             },
             {
                 "id": 3,
-                "text": "Testimonial",
-                "url": "/testimonial"
+                "text": "Customs Compliance",
+                "url": "/service"
             },
             {
                 "id": 4,
-                "text": "Timeline",
-                "url": "/timeline"
+                "text": "Ocean FCL (Import / Export)",
+                "url": "/service"
             }
         ]
     },
 
     {
         "id": 4,
-        "title": "Company",
+        "title": "Services",
         "quicklink": [
             {
                 "id": 1,
-                "text": "Pricing",
-                "url": "/pricing"
+                "text": "Portfolio",
+                "url": "/portfolio"
             },
             {
                 "id": 2,
-                "text": "Team",
-                "url": "/team"
+                "text": "Contact",
+                "url": "/contact"
             },
             {
                 "id": 3,
-                "text": "Advance Tab",
-                "url": "/advance-tab"
+                "text": "Service",
+                "url": "/service"
             },
             {
                 "id": 4,
-                "text": "Service",
-                "url": "/service"
+                "text": "Blog",
+                "url": "/blog"
             }
         ]
     },
