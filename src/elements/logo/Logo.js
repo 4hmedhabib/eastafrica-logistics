@@ -1,19 +1,40 @@
 import PropTypes from "prop-types";
-import React from 'react';
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Logo = ({image, image2}) => {
-    return(
-        <div className="logo">
-            <Link to={process.env.PUBLIC_URL + "/"}>
-                <img className="logo-light" src={process.env.PUBLIC_URL + image} alt="Corporate Logo" />
-                <img className="logo-dark" src={process.env.PUBLIC_URL + image2} alt="Corporate Logo" />
-            </Link>
-        </div>
-    )
-}
+const Logo = ({ image, image2 }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <div>
+        <Link to={"/"} className="">
+          <img
+            src={image2}
+            alt="East Africa Logo"
+            style={{
+              objectFit: "contain",
+              width: "80px",
+              padding: 0,
+              margin: 0,
+            }}
+          />
+        </Link>
+      </div>
+      <div className="p-0 m-0">
+        <span>
+          <h1 className="h4 p-0 m-0 text-dark">East Africa</h1>
+          <p className="p-0 m-0">Logistics & Cargo</p>
+        </span>
+      </div>
+    </div>
+  );
+};
 Logo.propTypes = {
-    image: PropTypes.string
+  image: PropTypes.string,
 };
 
 export default Logo;
