@@ -60,10 +60,10 @@ const AboutUs = () => {
             </div>
             <div className="col-lg-6">
               <p className="mb--10">
-                Qoraal Tusaale Ah. Quod, quis. Ullam accusantium dignissimos
-                repellendus nemo fugiat numquam, nisi odio adipisci. Veniam
-                neque itaque expedita officiis rem ipsa! Ratione, rem
-                reiciendis?
+                East Africa Cargo Services and Logistics has embraced our
+                mission to provide outstanding transportation and logistics
+                services for cargo of any size, moving to any location, while
+                exceeding customer expectations in quality, service and price.
               </p>
             </div>
           </div>
