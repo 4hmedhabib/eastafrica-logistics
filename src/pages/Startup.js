@@ -1,37 +1,37 @@
 import React from "react";
 import Slider from "react-slick";
 import SEO from "../common/SEO";
-import HeaderOne from "../common/header/HeaderOne";
 import { BannerActivation } from "../utils/script";
 import Separator from "../elements/separator/Separator";
 import SectionTitle from "../elements/sectionTitle/SectionTitle";
-import FooterTwo from "../common/footer/FooterTwo";
 import AboutFour from "../elements/about/AboutFour";
 import ServiceTwo from "../elements/service/ServiceTwo";
 import SlipFour from "../elements/split/SlipFour";
 import TestimonialOne from "../elements/testimonial/TestimonialOne";
 import BreadcrumbOne from "../elements/breadcrumb/BreadcrumbOne";
 import BlogProp from "../components/blog/itemProp/BlogProp";
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 
 const BannerData = [
   {
     image: "/images/slides/banner-bg-1.jpeg",
-    title: "Startup Your <br /> Business Agency.",
+    title: "Get The Best <br /> Transport And Logistics Support.",
     description:
-      "We help our clients succeed by creating brand identities, <br /> digital experiences, and print materials.",
+      "East Africa Cargo Services and Logistics has embraced our mission to provide outstanding </br> transportation and logistics services for cargo of any size, moving to any </br> location, while exceeding customer expectations </br> in quality, service and price.",
   },
   {
     image: "/images/slides/banner-bg-2.jpeg",
-    title: "Startup Your <br /> Creative Agency.",
+    title: "Get The Best <br /> Transport And Logistics Support.",
     description:
-      "We help our clients succeed by creating brand identities, <br /> digital experiences, and print materials.",
+      "East Africa Cargo Services and Logistics has embraced our mission to provide outstanding </br> transportation and logistics services for cargo of any size, moving to any </br> location, while exceeding customer expectations </br> in quality, service and price.",
   },
 ];
 
 const Startup = () => {
   return (
     <>
-      <SEO title="Startup Agency" />
+      <SEO title="Home" />
 
       {/* Start Slider Area  */}
       <Slider
@@ -58,10 +58,17 @@ const Startup = () => {
                         className="description"
                         dangerouslySetInnerHTML={{ __html: data.description }}
                       ></p>
-                      <div className="button-group mt--30">
-                        <span className="btn-default btn-large round">
-                          Get started now
-                        </span>
+                      <div className="call-to-btn text-left mt_sm--20 text-md-center pointer-event">
+                        <Link
+                          className="btn-default btn-icon"
+                          target="_blank"
+                          href="/contact"
+                        >
+                          Get Start Now
+                          <i className="icon">
+                            <FiArrowRight />
+                          </i>
+                        </Link>
                       </div>
                     </div>
                   </div>
