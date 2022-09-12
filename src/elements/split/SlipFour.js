@@ -76,7 +76,10 @@ const SlipFour = () => {
           <div className="order-1 order-lg-2 col-lg-12 col-xl-6 col-12">
             <div className="thumbnail">
               <img
-                src="./images/services/choose-us-img-3.jpeg"
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/services/choose-us-img-3.jpeg"
+                }
                 alt="split Images"
               />
             </div>

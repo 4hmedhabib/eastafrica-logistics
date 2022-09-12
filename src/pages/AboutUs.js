@@ -106,7 +106,7 @@ const AboutUs = () => {
 
       <Separator />
 
-      <AboutFour image="./images/about/contact-image.jpg" />
+      <AboutFour image="/images/about/contact-image.jpg" />
 
       {/* Start Elements Area  */}
       <div className="rwt-counterup-area pb--100">

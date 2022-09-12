@@ -53,7 +53,7 @@ const Business = () => {
               </div>
               <div className="order-1 order-lg-2 col-lg-5">
                 <div className="thumbnail">
-                  <img src="./images/about/about-2.png" alt="Banner Images" />
+                  <img src="/images/about/about-2.png" alt="Banner Images" />
                 </div>
               </div>
             </div>

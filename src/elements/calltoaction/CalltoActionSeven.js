@@ -19,7 +19,33 @@ const CalltoActionSeven = () => {
           <div className="col-lg-8 col-md-8">
             <div className="inner">
               <div className="content text-left">
-                <Logo image2={`/images/logo/logo.png`} />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <div>
+                    <Link to={"/"} className="">
+                      <img
+                        src={`${process.env.PUBLIC_URL}/images/logo/logo.png`}
+                        alt="East Africa Logo"
+                        style={{
+                          objectFit: "contain",
+                          width: "80px",
+                          padding: 0,
+                          margin: 0,
+                        }}
+                      />
+                    </Link>
+                  </div>
+                  <div className="p-0 m-0">
+                    <span>
+                      <h1 className="h4 p-0 m-0 text-dark">East Africa</h1>
+                      <p className="p-0 m-0">Logistics & Cargo</p>
+                    </span>
+                  </div>
+                </div>
                 <ScrollAnimation
                   animateIn="fadeInUp"
                   animateOut="fadeInOut"

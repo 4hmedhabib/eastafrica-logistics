@@ -56,16 +56,13 @@ const SeoAgency = () => {
               <div className="col-lg-6 order-1 order-lg-2">
                 <div className="thumbnail">
                   <img
-                    src="./images/banner/banenr-image-02.png"
+                    src="/images/banner/banenr-image-02.png"
                     alt="Banner Images"
                   />
                 </div>
               </div>
               <div className="shape-image">
-                <img
-                  src="./images/banner/white-shape.svg"
-                  alt="Banner Images"
-                />
+                <img src="/images/banner/white-shape.svg" alt="Banner Images" />
               </div>
             </div>
           </div>

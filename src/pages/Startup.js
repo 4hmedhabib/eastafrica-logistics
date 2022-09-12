@@ -43,7 +43,7 @@ const Startup = () => {
             <div
               className="height-750 bg-overlay bg_image"
               style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL} ${data.image})`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}${data.image})`,
               }}
             >
               <div className="container">
@@ -80,8 +80,9 @@ const Startup = () => {
       </Slider>
       {/* End Slider Area  */}
       <Separator />
-      <AboutFour image="/images/image6.jpeg" />
+      <AboutFour image={process.env.PUBLIC_URL + "/images/image6.jpeg"} />
       <Separator />
+
       {/* Start Service Area  */}
       <div className="rn-service-area rn-section-gap ">
         <div className="container">
@@ -99,8 +100,10 @@ const Startup = () => {
           <ServiceTwo cardStyle="card-style-1" textAlign="text-left" />
         </div>
       </div>
+
       {/* End Service Area  */}
       <Separator />
+
       {/* Start Elements Area  */}
       <div className="rwt-split-area mt--40">
         <div className="wrapper">
@@ -119,6 +122,7 @@ const Startup = () => {
         </div>
       </div>
       {/* End Elements Area  */}
+
       <Separator />
       {/* Start Elements Area  */}
       <div className="rwt-testimonial-area rn-section-gap">

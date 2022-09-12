@@ -79,7 +79,7 @@ const WebAgency = () => {
                 <div className="thumbnail">
                   <img
                     className="radius w-100"
-                    src="./images/bg/bg-image-21.jpg"
+                    src="/images/bg/bg-image-21.jpg"
                     alt="Images"
                   />
                 </div>
@@ -154,7 +154,7 @@ const WebAgency = () => {
         </div>
         {/* End Service Area  */}
 
-        <AboutFour image="./images/about/contact-image.jpg" />
+        <AboutFour image="/images/about/contact-image.jpg" />
 
         {/* Start Elements Area  */}
         <div className="rwt-pricingtable-area rn-section-gapBottom">

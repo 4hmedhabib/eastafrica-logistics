@@ -69,17 +69,14 @@ const EventConference = () => {
                 {PopupData.map((item) => (
                   <div className="video-btn" key={item.id}>
                     <VideoTwo
-                      imagename="./images/about/about-6.png"
+                      imagename="/images/about/about-6.png"
                       galleryItem={item}
                     />
                   </div>
                 ))}
               </div>
               <div className="shape-image">
-                <img
-                  src="./images/banner/white-shape.svg"
-                  alt="Banner Images"
-                />
+                <img src="/images/banner/white-shape.svg" alt="Banner Images" />
               </div>
             </div>
           </div>
@@ -110,7 +107,7 @@ const EventConference = () => {
 
         <Separator />
 
-        <AboutFour image="./images/about/about-4.png" />
+        <AboutFour image="/images/about/about-4.png" />
 
         {/* Start Elements Area  */}
         <div className="rwt-split-area">
