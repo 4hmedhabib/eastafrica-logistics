@@ -42,7 +42,7 @@ const TestimonialOne = ({ column, teamStyle }) => {
               <div className="inner">
                 <figure className="thumbnail">
                   <img
-                    src={`./images/testimonial/${data.image}.jpg`}
+                    src={`${process.env.PUBLIC_URL}/images/testimonial/${data.image}.jpg`}
                     alt="Corporate React Template"
                   />
                 </figure>

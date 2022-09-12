@@ -22,7 +22,7 @@ const ServiceList = [
       "When it is about cargo- always go to the cargo people. By coming to East Africa Cargo, you would have taken one of the steps of ensuring your cargo arrives safely ...",
   },
   {
-    image: "https://templates.hibootstrap.com/ezio/default/assets/img/about-img.jpg",
+    image: "/images/services/services-1.jpeg",
     title: "Project Cargo",
     description:
       "Qoraal Tusaal ah. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nostrum minima eligendi neque labore asperiores ...",
@@ -43,7 +43,10 @@ const ServiceTwo = ({ textAlign, cardStyle }) => {
               <div className="inner">
                 <div className="image">
                   <Link to="#service">
-                    <img src={`${val.image}`} alt="card Images" />
+                    <img
+                      src={`${process.env.PUBLIC_URL + val.image}`}
+                      alt="card Images"
+                    />
                   </Link>
                 </div>
                 <div className="content">
