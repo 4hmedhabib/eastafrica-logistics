@@ -43,7 +43,7 @@ const Startup = () => {
             <div
               className="height-750 bg-overlay bg_image"
               style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL} ${data.image})`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}${data.image})`,
               }}
             >
               <div className="container">
