@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "fslightbox-react": "^1.6.2"
+    "fslightbox-react": "^1.6.2",
+    "prisma": "^4.4.0"
   }
 }
