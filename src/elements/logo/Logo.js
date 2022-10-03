@@ -27,7 +27,7 @@ const Logo = ({ image, image2 }) => {
       <div className="p-0 m-0 d-none d-md-block">
         <span>
           <h1 className="h4 p-0 m-0 text-dark">East Africa</h1>
-          <p className="p-0 m-0">Logistics & Cargo</p>
+          <p className="p-0 m-0">Cargo & Logistics</p>
         </span>
       </div>
     </div>
