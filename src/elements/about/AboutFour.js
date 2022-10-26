@@ -5,7 +5,7 @@ import { FiCheck } from "react-icons/fi";
 const PopupData = [
   {
     id: "01",
-    image: "./images/bg/bg-image-4.jpg",
+    image: process.env.PUBLIC_URL + "/images/bg/bg-image-16.jpg",
     popupLink: ["https://www.youtube.com/watch?v=5aILNbBYr8c"],
   },
 ];

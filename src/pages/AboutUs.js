@@ -1,14 +1,9 @@
 import React from "react";
 import SEO from "../common/SEO";
-import HeaderOne from "../common/header/HeaderOne";
-import FooterFour from "../common/footer/FooterFour";
 import BrandThree from "../elements/brand/BrandThree";
 import AboutFour from "../elements/about/AboutFour";
-import ServiceOne from "../elements/service/ServiceOne";
 import SectionTitle from "../elements/sectionTitle/SectionTitle";
 import CounterUpFour from "../elements/counterup/CounterUpFour";
-import TeamFour from "../elements/team/TeamFour";
-import TimelineTwo from "../elements/timeline/TimelineTwo";
 import Separator from "../elements/separator/Separator";
 import ServiceTwo from "../elements/service/ServiceTwo";
 import TeamOne from "../elements/team/TeamOne";
@@ -23,7 +18,7 @@ const AboutUs = () => {
         className="slider-area slider-style-1 height-650 bg_image"
         data-black-overlay="7"
         style={{
-          backgroundImage: `url(/images/image6.jpeg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/image6.jpeg)`,
         }}
       >
         <div className="container">
@@ -106,7 +101,9 @@ const AboutUs = () => {
 
       <Separator />
 
-      <AboutFour image="/images/about/contact-image.jpg" />
+      <AboutFour
+        image={process.env.PUBLIC_URL + "/images/about/contact-image.jpg"}
+      />
 
       {/* Start Elements Area  */}
       <div className="rwt-counterup-area pb--100">
@@ -143,7 +140,6 @@ const AboutUs = () => {
           />
         </div>
       </div>
-      {/* End Elements Area  */}
       {/* End Elements Area  */}
     </>
   );
