@@ -1,11 +1,16 @@
 package routes
 
 import (
+	"os"
+	"strconv"
 	"time"
 
+	"github.com/4hmedhabib/url_shortener_api/database"
 	"github.com/4hmedhabib/url_shortener_api/helpers"
 	"github.com/asaskevich/govalidator"
 	"github.com/gofiber/fiber/v2"
+	"github.com/google/uuid"
+	"github.com/redis/go-redis/v9"
 )
 
 type request struct {
@@ -32,6 +37,26 @@ func ShortenURL(c *fiber.Ctx) error {
 
 	// implement rate limiting
 
+	rdb := database.CreateClient(1)
+	defer rdb.Close()
+
+	val, err := rdb.Get(database.Ctx, c.IP()).Result()
+
+	if err == redis.Nil {
+		_ = rdb.Set(database.Ctx, c.IP(), os.Getenv("API_QUOTA"), 30*60*time.Second).Err()
+	} else {
+		val, _ = rdb.Get(database.Ctx, c.IP()).Result()
+		valInt, _ := strconv.Atoi(val)
+
+		if valInt <= 0 {
+			limit, _ := rdb.TTL(database.Ctx, c.IP()).Result()
+			return c.Status(fiber.StatusServiceUnavailable).JSON(fiber.Map{
+				"error":           "Rate limit exceeded",
+				"rate_limit_rest": limit / time.Nanosecond / time.Minute,
+			})
+		}
+	}
+
 	// check if the input if an actual URL
 
 	if !govalidator.IsURL(body.URL) {
@@ -48,5 +73,20 @@ func ShortenURL(c *fiber.Ctx) error {
 
 	body.URL = helpers.EnforceHTTP(body.URL)
 
-	return
+	var id string
+
+	if body.CustomShort == "" {
+		id = uuid.New().String()[:6]
+	} else {
+		id = body.CustomShort
+	}
+
+	rdb2 := database.CreateClient(0)
+
+	val, _ = rdb2.Get(database.Ctx, id).Result()
+	if val != "" {
+
+	}
+
+	rdb.Decr(database.Ctx, c.IP())
 }
