@@ -85,8 +85,40 @@ func ShortenURL(c *fiber.Ctx) error {
 
 	val, _ = rdb2.Get(database.Ctx, id).Result()
 	if val != "" {
+		return c.Status(fiber.StatusForbidden).JSON(fiber.Map{
+			"error": "URL custom short is already in use",
+		})
+	}
 
+	if body.Expiry == 0 {
+		body.Expiry = 24
+	}
+
+	err = rdb2.Set(database.Ctx, id, body.URL, body.Expiry*36000*time.Second).Err()
+
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Unable to connect to server",
+		})
+	}
+
+	resp := response{
+		URL:             body.URL,
+		CustomShort:     "",
+		Expiry:          body.Expiry,
+		XRateRemaining:  10,
+		XRateLimitReset: 30,
 	}
 
 	rdb.Decr(database.Ctx, c.IP())
+
+	val, _ = rdb.Get(database.Ctx, c.IP()).Result()
+	resp.XRateRemaining, _ = strconv.Atoi(val)
+
+	ttl, _ := rdb.TTL(database.Ctx, c.IP()).Result()
+	resp.XRateLimitReset = ttl / time.Nanosecond / time.Minute
+
+	resp.CustomShort = os.Getenv("DOMAIN") + "/" + id
+
+	return c.Status(fiber.StatusOK).JSON(resp)
 }
